@@ -1,0 +1,69 @@
+@import "../../scssMixins/mixins";
+
+.Packages{
+  @extend box;
+  position: fixed;
+  top: 20%;
+  left: 100px;
+  bottom: 10%;
+  width: 40%;
+  background: rgba(255,255,255,0.4);
+  @include shadow(3px 5px 20px rgba(0,0,0,0.4));
+  z-index: 100;
+  font-family: gotham-l;
+  .p-head{
+    @extend box;
+    width: 100%;
+    line-height: 80px;
+    font-size: 40px;
+    padding-left: 20px;
+    background: #484648;
+    color: #fff;
+  }
+  .p-items{
+    @extend box;
+    position: absolute;
+    top:80px;
+    left:0;
+    right:0;
+    bottom: 0;
+    background: rgba(255,255,255,0.8);
+    overflow: auto;
+    @extend coolbarSmall;
+    .p-item:hover{
+      cursor: pointer;
+      background: rgba(0,0,0,0.05);
+    }
+    .p-item{
+      @extend box;
+      width: 100%;
+      padding: 10px 0;
+      .pi-desc,
+      .pi-date,
+      .pi-cost,
+      .pi-name{
+        @extend box;
+        width: 100%;
+        padding: 3px 30px;
+      }
+      .pi-name{
+        font-size: 20px;
+        color: #fb497d;
+      }
+      .pi-desc{
+        font-size: 14px;
+        font-family: gotham;
+      }
+      .pi-cost{
+        font-family: gotham-b;
+        font-size: 15px;
+        color: #2ecc71;
+      }
+      .pi-date{
+        font-family: gotham-l;
+        font-size: 15px;
+        color: #434444;
+      }
+    }
+  }
+}

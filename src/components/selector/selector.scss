@@ -1,0 +1,107 @@
+@import "../../scssMixins/mixins";
+
+.Selector.active {
+  right: 0;
+}
+.Selector {
+  @extend box;
+  width: 50%;
+  position: fixed;
+  top:0;
+  right: -56%;
+  bottom: 0;
+  //background: #fafafa;
+  background: #fff;
+  @include shadow(0 0 40px rgba(0,0,0,0.2));
+  @include transition(0.5s);
+  z-index: 999999;
+  .s-close:hover{
+    cursor: pointer;
+    background: rgba(0,0,0,0.07);
+    color: #333;
+  }
+  .s-close{
+    @extend box;
+    position: absolute;
+    top:10px;
+    left:10px;
+    z-index: 100;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-family: gotham-l;
+    font-size: 20px;
+    color: #666;
+  }
+  .s-head{
+    @extend box;
+    width: 100%;
+    line-height: 70px;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 100px;
+    font-family: gotham-l;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  .s-desc,
+  .s-cost,
+  .s-date,
+  .s-name{
+    @extend box;
+    width: 100%;
+    text-align: center;
+    padding: 0 80px;
+    font-family: gotham-l;
+  }
+  .s-desc{
+    margin: 10px 0;
+  }
+  .s-cost{
+    font-family: gotham-b;
+    color: #2ab481;
+  }
+  .s-date{
+    font-family: gotham-l;
+    color: #575455;
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+  .s-name{
+    font-family: gotham-b;
+    color: #ff5679;
+    font-size: 20px;
+  }
+  .s-form{
+    @extend box;
+    width: 100%;
+    padding: 100px 200px;
+    input{
+      @extend box;
+      @include borderBox();
+      width: 100%;
+      height: 40px;
+      margin: 6.5px 0;
+      padding-left: 10px;
+      font-family: gotham-l;
+    }
+    button:hover{
+      cursor: pointer;
+      background: #219352!important;
+    }
+    button:focus,
+    button{
+      outline: none;
+      @extend box;
+      margin: 6.5px 0;
+      width: 100%;
+      height: 40px;
+      border: none;
+      background: #2ecc71;
+      color: #fff;
+      font-family: gotham-b;
+    }
+  }
+}

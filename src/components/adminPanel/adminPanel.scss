@@ -1,0 +1,139 @@
+@import "../../scssMixins/mixins";
+
+.AdminPanel{
+  @extend box;
+  position: fixed;
+  top:100px;
+  left:30px;
+  right:30px;
+  bottom:0;
+  background: #fff;
+  z-index: 10000000;
+  .ap-container{
+    @extend box;
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+    .apc-content{
+      @extend box;
+      width: 100%;
+      position: relative;
+      height: 100%;
+      .apcc-head{
+        @extend box;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        background: #fafafa;
+        font-size: 15px;
+        font-family: gotham-b;
+        padding-left: 15px;
+        color: #555;
+      }
+      .apcc-body{
+        @extend box;
+        position: absolute;
+        top:40px;
+        left:0;
+        right:0;
+        bottom:0;
+        border: 1px solid #aaa;
+        .p-items.-ultra{ bottom:0}
+        .p-items{
+          @extend box;
+          position: absolute;
+          top:0px;
+          left:0;
+          right:0;
+          bottom: 200px;
+          border-bottom: 1px solid #aaa;
+          background: rgba(255,255,255,0.8);
+          overflow: auto;
+          @extend coolbarSmall;
+          .p-item:hover{
+            cursor: pointer;
+            background: rgba(0,0,0,0.05);
+          }
+          .p-item{
+            @extend box;
+            width: 100%;
+            padding: 10px 0;
+            .pi-desc,
+            .pi-date,
+            .pi-cost,
+            .pi-name{
+              @extend box;
+              width: 100%;
+              padding: 3px 30px;
+            }
+            .pi-name{
+              font-size: 20px;
+              color: #fb497d;
+            }
+            .pi-desc{
+              font-size: 14px;
+              font-family: gotham;
+            }
+            .pi-cost{
+              font-family: gotham-b;
+              font-size: 15px;
+              color: #2ecc71;
+            }
+            .pi-date{
+              font-family: gotham-l;
+              font-size: 15px;
+              color: #434444;
+            }
+          }
+        }
+        .apcc-form{
+          @extend box;
+          @include borderBox();
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left:0;
+          right:0;
+          height: 200px;
+          padding: 10px 30px;
+          input{
+            @extend box;
+            @include borderBox();
+            width: 48%;
+            margin: 0;
+            margin-right: 2%;
+            height: 30px;
+            padding-left: 10px;
+          }
+          input:nth-child(2){
+            margin-left: 2%;
+            margin-right: 0;
+          }
+          textarea{
+            @extend box;
+            width: 100%;
+            margin-top: 10px;
+            height: 90px;
+          }
+
+          button:hover{
+            cursor: pointer;
+            background: #219352!important;
+          }
+          button:focus,
+          button{
+            outline: none;
+            @extend box;
+            margin: 6.5px 0;
+            width: 100%;
+            height: 40px;
+            border: none;
+            background: #2ecc71;
+            color: #fff;
+            font-family: gotham-b;
+          }
+        }
+      }
+    }
+  }
+}
